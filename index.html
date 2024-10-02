@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game of life</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="js/game.js" async></script>
+    <script src="js/grid.js" async></script>
+
+</head>
+<body>
+<header>
+    <div class="container header-container">
+        <div class="header-title">
+            <h1>Game of life</h1>
+        </div>
+
+    </div>
+
+</header>
+<div class="page-content">
+    <div class="container controls-row">
+        <div class="gen-btn-block">
+            <button class="generate-btn" id="generate-button" onclick="generateStartPosition()">Сгенерировать стартовую позицию</button>
+        </div>
+
+        <div class="settings-block">
+            <div class="set-size-block">
+                <div class="size-set">
+                    <label for="field_width" class="input-label">Ширина поля</label>
+                    <input type="number" max="500" min="3" id="field_width" name="field_width" value="10" class="settings-input">
+                </div>
+                <div class="size-set">
+                    <label for="field_height" class="input-label">Высота поля</label>
+                    <input type="number" max="500" min="3" id="field_height" name="field_height" value="10" class="settings-input">
+                </div>
+
+                <button type="button" name="sbmt-counts-btn"
+                       onclick="applyFieldSettings(field_width.value, field_height.value)"
+                        >Применить</button>
+            </div>
+            <div class="gen-block">
+                <div class="row gen-info">
+                    <div class="gen-title" id="gen-title">Поколение: 0</div>
+                    <div class="gen-time" id="gen-time">Время: 0</div>
+                </div>
+                <button class="next-gen-btn" onclick="nextGen()">Следующее поколение</button>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="row game-content-row">
+        <div id="field" class="field"></div>
+    </div>
+
+</div>
+
+</body>
+<script src="js/start.js"></script>
+</html>
